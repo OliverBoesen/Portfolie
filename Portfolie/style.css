@@ -1,0 +1,291 @@
+:root {
+ /* Light mode */
+  --primary-color: white;
+  --secondary-color: #1d1d1d;
+  --gradient-color: linear-gradient(45deg, #d2001a, #7462ff, #af6619, #23d6ab);
+  --glass:  rgba(255, 255, 255, 0.25)
+
+}
+
+.dark-mode {
+  
+  --primary-color: #1d1d1d;
+  --secondary-color: white;
+  --gradient-color: linear-gradient(45deg, #050304, #5a5a5a, #4b4b4b, #6c6d6d);
+  --glass:  rgba(255, 255, 255, 0.356);
+}
+
+
+body {
+  /* Fjern overflow: hidden eller brug overflow-y: auto for kun lodret scrolling */
+  overflow-y: auto; /* Dette tillader lodret scrolling */
+  overflow-x: hidden; /* Dette forhindrer horisontal scrolling, hvis det er nødvendigt */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Navigation Menu */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  justify-content: safe;
+  padding: 15px 0;
+  background-color: var(--secondary-color);
+}
+
+.menu a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.5s ease;
+  margin: 0 50px;
+}
+
+.menu a:hover {
+  color: #ff6347; /* Orange hover effekt */
+  text-decoration: underline;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+    
+}
+
+/* Navigation Menu Slut */
+
+/* Card intro med glass effekt */
+
+.bg-container {
+    position: relative; /* Ensure background is positioned correctly */
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background: var(--gradient-color);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    z-index: 0; /* Lower z-index for background */
+  }
+  @keyframes color {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+  }
+  
+  .intro-container {
+    position: absolute; /* Position it absolutely relative to the .bg-container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for true centering */
+    background-color: var(--glass);
+    height: 60%;
+    width: 60%;
+    display: flex;
+    backdrop-filter: blur(10rem);
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the content vertically */
+    border-radius: 20px;
+    box-shadow: 20px 10px 20px var(--secondary-color);
+    z-index: 1; /* Ensure it is above the background */
+  }
+  
+  .intro-img {
+    margin-top: 4.5rem;
+  }
+  
+  .card-intro {
+    color: var(--primary-color);
+    width: 100%;
+    text-align: center; /* Center text */
+  }
+  
+  .card-intro h1 {
+    font-size: 6rem;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+  }
+  
+  
+/* Card intro Slut */
+
+/* Typewriter */
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-left: 6rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--primary-color);
+  margin-left: 4px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}
+
+/* Typewriter slut */
+
+.intro-knap {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: 0rem auto;
+
+  }
+  
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+    margin-top: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+   
+  }
+  
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+  
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: var(--primary-color);
+  }
+  
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+  
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+  
+  @keyframes move {
+    25% {
+      opacity: 1;
+  
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  .scroll-text {
+    display: block;
+    margin-top: -6rem;
+    margin-left: -30px;
+    font-family: "Satisfy", cursive;
+    font-size: 15px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+    position: relative;
+  }
+  
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  .om-mig-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh; /* Fuld højde af vinduet */
+    padding: 0 2rem; /* Giver lidt plads på venstre og højre side */
+    margin-top: 20rem;
+  
+  }
+  
+  .icons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%; /* Tildel venstre side 30% af bredden */
+  }
+  
+  .icons-container h2 {
+    margin-top: 3rem;
+    text-decoration: underline;
+  }
+  
+  .icon-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 2rem; /* Giver mellemrum mellem de to rækker */
+  }
+  
+  .icon {
+    width: 120px; /* Størrelsen på dine ikoner */
+   
+  }
+  
+  .text-container {
+    width: 50%; /* Tildel højre side 60% af bredden */
+    text-align: left;
+  }
+  
+  .text-container h2 {
+    font-size: 2.5rem;
+    margin-top: -5rem;
+  }
+  
+  .text-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
