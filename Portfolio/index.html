@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oliver Boesen | Portfolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font / Intro h1-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link til swiperjs CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Font til Brødtekst-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link til arrow ikon-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+
+    <nav>
+      <div class="menu">
+        <a href="#home" id="logo">Oliver Boesen</a>
+        <div class="burger-icon" id="burgerIcon">&#9776;</div>
+        <!-- Burger menu icon -->
+        <div class="nav-links" id="navLinks">
+          <a href="#about">Om mig</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projekter</a>
+          <a href="#contact">Kontakt</a>
+        </div>
+        <img src="img/darkmode.png" id="icon" />
+      </div>
+    </nav>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Intro section -->
+
+    <section class="bg-container" id="home"></section>
+
+    <div class="intro-container">
+      <div class="intro-img">
+        <img src="img/portfolio-udenbg.png" alt="" />
+      </div>
+
+      <div class="card-intro">
+        <h1>Oliver Boesen</h1>
+        <p>Multimediedesign studerende</p>
+        <div class="typewriter-container">
+          <div>Jeg&nbsp;</div>
+          <div id="dynamic-text"></div>
+          <div class="cursor"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-knap">
+      <a href="#about">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <span class="scroll-text" id="about"></span>
+      </a>
+    </div>
+
+    <!-- Om mig section-->
+
+    <div class="about-section" id="transition-to-about">
+      <div class="profile-text">
+        <h2>Om Mig</h2>
+        <p>
+          Hej med jer! Tak fordi i besøger min hjemmeside. <br /><br />
+          Jeg hedder Oliver og jeg er 22 år gammel. Jeg er oprindeligt fra
+          Middelfart på Fyn, hvor jeg har haft hele min opvækst. <br />
+          <br />
+          I Middelfart har jeg lært mine bedste venner at kende, og vi har alle
+          fulgt hinanden til Aarhus, hvor jeg studere Multimediedesign på
+          Erhversakadamiet Aarhus. <br /><br />
+          I min fritid kan jeg godt lige at spille computer (især
+          Counter-Strike), hvor jeg blandt andet har spillet på semi
+          proffesionelt niveua. <br /><br />
+          Sporten har altid fyldt meget i min familie, vi har brugt adskillig
+          timer i håndbold hallen, hvor jeg blandandet har sat i
+          ungdomsbestyrrlsen i #ProjektNextGen. <br /><br />
+          Selvom jeg kommer fra en håndbold familie, bruger jeg tit mine
+          weekender foran fjern'eren når Liverpool spiller!
+        </p>
+      </div>
+      <div class="profile-image">
+        <img src="img/mig-ubg.png" alt="Your Name" />
+      </div>
+    </div>
+
+    <!-- Skills section -->
+    <div class="skills-container" id="skills">
+      <div class="icons-container">
+        <div class="icon-row">
+          <img
+            src="img/black-html5.png"
+            alt="Icon 1"
+            class="icon"
+            id="html-icon"
+          />
+          <h2>Html5</h2>
+          <img
+            src="img/css-black.png"
+            alt="Icon 2"
+            class="icon"
+            id="css-icon"
+          />
+          <h2>CSS</h2>
+        </div>
+        <div class="icon-row">
+          <img
+            src="img/icons8-javascript-150.png"
+            alt="Icon 3"
+            class="icon"
+            id="js-icon"
+          />
+          <h2>JavaScript</h2>
+          <img
+            src="img/icons8-react-native-150.png"
+            alt="Icon 4"
+            class="icon"
+            id="react-icon"
+          />
+          <h2>React</h2>
+        </div>
+      </div>
+
+      <div class="text-container">
+        <h2>Skills</h2>
+        <p>
+          Jeg er en engageret studerende, der har lært at bruge HTML, CSS og
+          JavaScript til at skabe strukturerede og visuelt tiltalende
+          webapplikationer
+          <br /><br />
+          Derudover har jeg også tilegnet mig færdigheder i React, hvilket gør
+          mig i stand til at bygge dynamiske og brugervenlige
+          brugergrænseflader.
+          <br /><br />
+          Jeg har været igang med at kode i et år nu og jeg elsker at se
+          fremskridt. Dette kan især ses under mine projekter, der er klar
+          fremskridt i min kode. Jeg er klar til at tage mine kompetencer inden
+          for front-end udvikling til det næste niveau.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projekter section-->
+
+    <div class="pro-beskrivelse" id="projects">
+      <h2>Projekter</h2>
+      <h4>
+        Her kan du finde mine seneste projekter <br />
+        Du er velkommen til at se dem "live" ved at klikke på kortene herunder.
+      </h4>
+    </div>
+    <div class="pro-container swiper">
+      <div class="card-wrapper">
+        <ul class="pro-card-list swiper-wrapper">
+          <li class="pro-card-item swiper-slide">
+            <a href="/MHK/index.html" class="pro-card-link" target="_blank">
+              <img
+                src="img/mhk-logo.png"
+                alt="Card Image"
+                class="pro-card-image"
+              />
+              <p class="badge mhk">2. Semester Eksamen</p>
+              <h2 class="pro-card-title">
+                Ombygning af Middelfart Håndboldklubs hjemmeside.
+              </h2>
+              <button class="pro-card-button material-symbols-rounded">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="pro-card-item swiper-slide">
+            <a href="/UX-UI/index.html" class="pro-card-link" target="_blank">
+              <img
+                src="img/nippon-logo.png"
+                alt="Card Image"
+                class="pro-card-image"
+              />
+              <p class="badge nippon">2. Semester Projekt</p>
+              <h2 class="pro-card-title">
+                Måltidkasse hjemmeside, med fokus på Asiatisk mad.
+              </h2>
+              <button class="pro-card-button material-symbols-rounded">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="pro-card-item swiper-slide">
+            <a
+              href="/Eskamen-programmering/index.html"
+              class="pro-card-link"
+              target="_blank"
+            >
+              <img
+                src="img/TB-logo.png"
+                alt="Card Image"
+                class="pro-card-image"
+              />
+              <p class="badge tb">1. Semester Eksamen</p>
+              <h2 class="pro-card-title">
+                Hjemmeside til figtiv bryggeri, med lokation i Aarhus.
+              </h2>
+              <button class="pro-card-button material-symbols-rounded">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="pro-card-item swiper-slide">
+            <a
+              href="/Interaktiv-design/Interaktiv storytelling/index.html"
+              class="pro-card-link"
+              target="_blank"
+            >
+              <img
+                src="img/Steno-logo.png"
+                alt="Card Image"
+                class="pro-card-image"
+              />
+              <p class="badge steno">2. Semester Projekt</p>
+              <h2 class="pro-card-title">
+                Udstilling på Steno Musset, baseret på interaktiv storytelling.
+              </h2>
+              <button class="pro-card-button material-symbols-rounded">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="pro-card-item swiper-slide">
+            <a href="/OM/index.html" class="pro-card-link" target="_blank">
+              <img
+                src="img/om-logo.png"
+                alt="Card Image"
+                class="pro-card-image"
+              />
+              <p class="badge om">1. Semester Projekt</p>
+              <h2 class="pro-card-title">
+                Online magazine bygget omkring selvvalgt projekt "Mad på SU.
+              </h2>
+              <button class="pro-card-button material-symbols-rounded">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+        </ul>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-slide-button swiper-button-prev"></div>
+        <div class="swiper-slide-button swiper-button-next"></div>
+      </div>
+    </div>
+
+    <!-- Kontakt section -->
+
+    <div class="kontakt-container" id="contact">
+      <div class="kontakt-icon">
+        <img src="img/kontakt-icon-sort.png" alt="" id="kontakt-icon" />
+      </div>
+      <div class="kontakt-tekst">
+        <h2>Kontakt</h2>
+        <p>
+          Du skal være velkommen til at connect med mig, du kan finde min
+          Linkedin, email og min github herunder.
+        </p>
+        <a
+          href="https://www.linkedin.com/in/oliver-boesen-1002a5172/"
+          target="_blank"
+          ><img src="img/linkedin-sort.png" alt="" id="linkedin"
+        /></a>
+        <a href="https://github.com/OliverBoesen" target="_blank"
+          ><img src="img/github-sort.png" alt="" id="github"
+        /></a>
+        <a href="mailto:oboesen18@gmail.com"
+          ><img src="img/email-sort.png" alt="" id="email"
+        /></a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright-bar">
+        <p>&copy; 2024 Oliver Boesen. Alle rettigheder forbeholdes.</p>
+        <button onclick="scrollToTop()">Tilbage til toppen</button>
+      </div>
+    </footer>
+
+    <!-- Link Swiperjs script-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Link JavaScript-->
+    <script src="script.js"></script>
+  </body>
+</html>

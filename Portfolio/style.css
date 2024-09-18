@@ -1,0 +1,933 @@
+:root {
+  /* Light mode */
+  --primary-color: #dddddf;
+  --secondary-color: #1d1d1d;
+  --afsnit-color: #bbbbbb;
+  --gradient-color: linear-gradient(45deg, #964650, #564f88, #917150, #4da590);
+  --glass: rgba(255, 255, 255, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark-mode {
+  --primary-color: #1d1d1d;
+  --secondary-color: #dddddf;
+  --afsnit-color: #242124;
+  --gradient-color: linear-gradient(
+    109.6deg,
+    rgba(35, 33, 33, 0.93) 11.2%,
+    rgb(63, 61, 61) 78.9%
+  );
+  --glass: rgba(255, 255, 255, 0.356);
+}
+
+body {
+  /* Fjern overflow: hidden eller brug overflow-y: auto for kun lodret scrolling */
+  overflow-y: auto; /* Dette tillader lodret scrolling */
+  overflow-x: hidden; /* Dette forhindrer horisontal scrolling, hvis det er nødvendigt */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Navigation Menu */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  justify-content: left;
+  padding: 15px 0;
+  background-color: var(--primary-color);
+}
+
+#logo {
+  font-family: "Satisfy", cursive;
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
+.menu a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.5s ease;
+  margin: 0 50px;
+}
+
+.menu a:hover {
+  color: #ff6347; /* Orange hover effekt */
+  text-decoration: underline;
+}
+
+#icon {
+  width: 40px;
+  cursor: pointer;
+  justify-content: right;
+}
+
+/* Burger icon styling */
+.burger-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 20px;
+  color: #050304;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Navigation Menu Slut */
+
+/*Proggres bar*/
+
+/* Progress bar styling */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: var(--primary-color);
+  position: fixed;
+  margin-top: 4.4rem;
+  left: 0;
+  z-index: 99;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #ff6347; /* Farve på progress baren */
+  width: 0%;
+}
+
+/* Card intro med glass effekt */
+
+.bg-container {
+  position: relative; /* Ensure background is positioned correctly */
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--gradient-color);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+  z-index: 0; /* Lower z-index for background */
+}
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.intro-container {
+  position: absolute; /* Position it absolutely relative to the .bg-container */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset for true centering */
+  background-color: var(--glass);
+  height: 60%;
+  width: 60%;
+  display: flex;
+  backdrop-filter: blur(10rem);
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center the content vertically */
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px var(--secondary-color);
+  z-index: 1; /* Ensure it is above the background */
+}
+
+.intro-img {
+  margin-top: 4.7rem;
+}
+
+.card-intro {
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center; /* Center text */
+}
+
+.card-intro h1 {
+  font-size: 6rem;
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  margin-left: -6rem;
+}
+
+.card-intro p {
+  visibility: hidden;
+}
+
+/* Card intro Slut */
+
+/* Typewriter */
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: -6rem;
+  margin-left: 2rem;
+  font-weight: bolder;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--primary-color);
+  margin-left: 4px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}
+
+/* Typewriter slut */
+
+.intro-knap {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0rem auto;
+}
+
+.chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+  margin-top: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: var(--primary-color);
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.scroll-text {
+  display: block;
+  margin-top: -6rem;
+  margin-left: -30px;
+  font-family: "Satisfy", cursive;
+  font-size: 15px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+  position: relative;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+
+/*Om mig section*/
+
+.about-section {
+  display: flex;
+  max-width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 6rem;
+  justify-content: space-evenly;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.about-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-top: 8.5rem;
+  border: 2px var(--secondary-color) solid;
+  box-shadow: 10px 10px 30px var(--secondary-color);
+}
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  scale: 115%;
+  object-fit: scale-down;
+}
+.profile-text {
+  max-width: 600px; /* Just an example; adjust as needed */
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.profile-text h2 {
+  text-align: center;
+}
+
+/* Om mig sektion slut */
+
+/* Skills Section */
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60vh; /* Fuld højde af vinduet */
+  padding: 0 2rem; /* Giver lidt plads på venstre og højre side */
+  margin-top: 5rem;
+  opacity: 0; /* Start med at skjule sektionen */
+  background-color: var(--afsnit-color);
+  font-weight: bolder;
+}
+
+.skills-container.fade-in {
+  animation: fadeIn 1s ease forwards; /* Tilføj fade-in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Tildel venstre side 30% af bredden */
+}
+
+.icons-container h2 {
+  margin-top: 3rem;
+  text-decoration: underline;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-bottom: 3rem; /* Giver mellemrum mellem de to rækker */
+}
+
+.icon {
+  width: 130px; /* Størrelsen på dine ikoner */
+}
+
+.text-container {
+  width: 45%; /* Tildel højre side 60% af bredden */
+  text-align: left;
+  margin-right: 3rem;
+  line-height: 5rem;
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  margin-top: -7rem;
+  text-align: center;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Projekter section */
+
+/* Tilstand før scroll */
+.pro-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Når elementet er i view */
+.pro-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pro-beskrivelse {
+  text-align: center;
+}
+
+.pro-container.swiper {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+}
+
+.card-wrapper {
+  max-width: 90rem;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+.pro-card-list .pro-card-item {
+  list-style: none;
+}
+
+.pro-card-list .pro-card-item .pro-card-link {
+  user-select: none;
+  display: block;
+  background: var(--secondary-color);
+  padding: 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 5px 10px 10px var(--secondary-color);
+  transition: 0.2s ease;
+}
+
+.pro-card-list .pro-card-item .pro-card-link:active {
+  cursor: grabbing;
+}
+
+.pro-card-list .pro-card-item .pro-card-link:hover {
+  border-color: #ff6347;
+}
+
+.pro-card-list .pro-card-link .pro-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/*Kort Overskrift (i farver)*/
+.pro-card-list .pro-card-link .badge {
+  color: var(--secondary-color);
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 16px 0 18px;
+  background: var(--primary-color);
+  width: fit-content;
+  border-radius: 50px;
+}
+
+/*Overskrift farve på kort*/
+.pro-card-list .pro-card-link .badge.mhk {
+  color: #b22485;
+  background: #f7dff5;
+}
+
+.pro-card-list .pro-card-link .badge.nippon {
+  color: #b22485;
+  background: #f7dff5;
+}
+
+.pro-card-list .pro-card-link .badge.tb {
+  color: #205c20;
+  background: #d6f8d6;
+}
+
+.pro-card-list .pro-card-link .badge.steno {
+  color: #b22485;
+  background: #f7dff5;
+}
+
+.pro-card-list .pro-card-link .badge.om {
+  color: #205c20;
+  background: #d6f8d6;
+}
+
+/*Kort beskrivelse*/
+.pro-card-list .pro-card-link .pro-card-title {
+  font-size: 1, 19rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/*Kort knap
+.pro-card-list .pro-card-link .pro-card-button {
+  height: 35px;
+  width: 35px;
+  color: var(--secondary-color);
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin: 30px 2px 5px;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  transform: rotate(-35deg);
+  transition: 0.4s ease;
+}*/
+
+.pro-card-list .pro-card-link .pro-card-button {
+  height: 35px;
+  width: 35px;
+  color: var(--secondary-color);
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin: 0 auto 5px auto; /* Juster margenen for at centrere */
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  transform: rotate(-35deg);
+  display: flex; /* Gør knappen til en flex-container */
+  justify-content: center; /* Centrerer indholdet horisontalt */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  transition: 0.4s ease;
+}
+
+.pro-card-list .pro-card-link:hover .pro-card-button {
+  background-color: #ff6347;
+  color: white;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background-color: var(--secondary-color);
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: var(--secondary-color);
+}
+
+/*Kontakt section*/
+
+.kontakt-container {
+  margin-top: 13rem;
+  background-color: var(--afsnit-color);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.kontakt-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kontakt-icon img {
+  border: 10px var(--secondary-color) solid;
+  border-radius: 50%;
+  width: 30%;
+  margin-left: 20rem;
+}
+
+.kontakt-tekst {
+  width: 30%;
+  margin-right: 20rem;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+
+.kontakt-tekst img {
+  width: 10%;
+  justify-items: space-between;
+  margin-right: 4rem;
+  transition: transform 250ms;
+}
+
+.kontakt-tekst img:hover {
+  transform: translateY(-10px);
+}
+
+/*Footer - Copyright bar*/
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.copyright-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+button:hover {
+  color: #ff6347;
+  text-decoration: underline;
+}
+
+/*Responsive CSS*/
+@media screen and (max-width: 768px) {
+  .menu {
+    justify-content: space-evenly;
+    margin-left: -3rem;
+  }
+
+  #icon {
+    width: 10%;
+  }
+
+  #logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 10px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .burger-icon {
+    display: block;
+    color: var(--primary-color);
+  }
+
+  .intro-container {
+    width: 90%;
+    height: 55%;
+    flex-direction: column-reverse;
+    margin-top: 1rem;
+  }
+
+  .intro-img img {
+    display: none;
+  }
+
+  .card-intro {
+    flex-direction: column;
+    margin-top: 10rem;
+  }
+
+  .card-intro p {
+    visibility: visible;
+    font-size: 2rem;
+    font-family: "Satisfy", cursive;
+    margin-top: -5rem;
+  }
+
+  .card-intro h1 {
+    font-size: 50rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .typewriter-container {
+    display: none;
+  }
+
+  #dynamic-text {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .about-section {
+    flex-direction: column;
+  }
+
+  .profile-text {
+    margin-bottom: -5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .profile-image {
+    width: 100%;
+  }
+
+  .skills-container {
+    height: 120vh;
+    flex-direction: column;
+  }
+
+  .icons-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .icon-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem; /* Giver mellemrum mellem de to rækker */
+    width: 100%;
+  }
+
+  .icon-row h2 {
+    display: none;
+  }
+
+  .icon {
+    width: 40%; /* Størrelsen på dine ikoner */
+  }
+
+  .text-container {
+    width: 100%; /* Tildel højre side 60% af bredden */
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .text-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  /* Show nav-links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .card-wrapper {
+    margin: 5px 10px 25px;
+    scroll-snap-align: center;
+    width: 100%;
+  }
+
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+
+  .kontakt-container {
+    flex-direction: column;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .kontakt-icon img {
+    display: none;
+  }
+
+  .kontakt-tekst h2 {
+    text-align: center;
+  }
+
+  .kontakt-tekst {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+  }
+
+  .kontakt-tekst img {
+    margin-right: 1.5rem;
+    width: 20%;
+  }
+
+  .copyright-bar {
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  .progress-container {
+    margin-top: 4.6rem;
+  }
+
+  .chevron {
+    margin-top: -4rem;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .intro-img img {
+    margin-bottom: -0.3rem;
+    position: relative;
+  }
+
+  .card-intro h1 {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .skills-container {
+    height: 150vh;
+    flex-direction: column;
+  }
+
+  .kontakt-tekst img {
+    margin-right: 1rem;
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .intro-img img {
+    margin-bottom: -5.8rem;
+    position: relative;
+  }
+
+  .card-intro h1 {
+    font-size: 3rem;
+    margin-bottom: 10rem;
+  }
+
+  .skills-container {
+    height: 135vh;
+    flex-direction: column;
+  }
+
+  .kontakt-tekst img {
+    margin-right: 1rem;
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .intro-img img {
+    width: 120%;
+    margin-bottom: 1.2rem;
+  }
+
+  .card-intro h1 {
+    font-size: 5.5rem;
+    margin-left: 0.1rem;
+    margin-top: -1rem;
+  }
+
+  .typewriter-container {
+    font-size: 1.2rem;
+    margin-left: 4.5rem;
+    font-weight: bolder;
+    margin-bottom: -3rem;
+  }
+
+  #logo {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .skills-container {
+    height: 80vh;
+  }
+
+  .text-container {
+    margin-top: 4rem;
+  }
+
+  .pro-card-title {
+    font-size: 1.2rem;
+  }
+
+  .kontakt-icon img {
+    width: 30%;
+    margin-top: 3rem;
+  }
+
+  .kontakt-tekst {
+    width: 45%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+}
