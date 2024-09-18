@@ -931,3 +931,29 @@ button:hover {
     margin-top: 1rem;
   }
 }
+
+@media screen and (max-width: 667px) {
+  .card-intro h1 {
+    font-size: 3rem;
+  }
+
+  .skills-container {
+    height: 155vh;
+  }
+
+  .chevron {
+    margin-top: -0.5rem;
+  }
+
+  #burgerIcon {
+    color: var(--secondary-color);
+  }
+
+  #navLinks a {
+    color: var(--primary-color);
+  }
+
+  .kontakt-tekst {
+    width: 80%;
+  }
+}
